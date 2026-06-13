@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PIXEL CRUSH</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #050510;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    min-height: 100vh;
+    font-family: 'Press Start 2P', monospace;
+    overflow: hidden;
+  }
+  h1 {
+    color: #00fff5; font-size: 24px; letter-spacing: 4px;
+    text-shadow: 0 0 10px #00fff5, 0 0 30px #00fff5;
+    margin-bottom: 8px;
+  }
+  .sub { color: #ff6b9d; font-size: 10px; margin-bottom: 16px; letter-spacing: 2px; }
+  #score-bar {
+    display: flex; gap: 24px; margin-bottom: 12px;
+    color: #ffd700; font-size: 11px;
+  }
+  #score-bar span { text-shadow: 0 0 8px #ffd700; }
+  canvas {
+    border: 3px solid #4a00e0;
+    box-shadow: 0 0 20px #4a00e0, 0 0 60px rgba(74,0,224,0.3);
+    border-radius: 4px; cursor: pointer;
+    image-rendering: pixelated;
+  }
+  .msg {
+    color: #4a4a6a; font-size: 8px; margin-top: 12px;
+    letter-spacing: 2px;
+  }
+  #combo {
+    position: fixed; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff0055; font-size: 32px;
+    text-shadow: 0 0 20px #ff0055, 0 0 60px #ff0055;
+    pointer-events: none; opacity: 0;
+    transition: opacity 0.2s;
+  }
+</style>
+</head>
+<body>
+<h1>PIXEL CRUSH</h1>
+<p class="sub">MATCH 3 TO SCORE</p>
+<div id="score-bar">
+  <span>SCORE: <b id="score">0</b></span>
+  <span>MOVES: <b id="moves">0</b></span>
+  <span>BEST: <b id="best">0</b></span>
+</div>
+<canvas id="c"></canvas>
+<p class="msg">CLICK TO SELECT  ·  CLICK ADJACENT TO SWAP</p>
+<div id="combo"></div>
+<script>
+const COLS = 8, ROWS = 8, CELL = 64, PAD = 16;
+const TYPES = ['🍎','🍊','🍋','🍇','🫐','💎'];
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
+canvas.width = COLS * CELL + PAD * 2;
+canvas.height = ROWS * CELL + PAD * 2;
+let grid = [], selected = null, score = 0, moves = 0, best = 0;
+let swapping = null, falling = false, checking = false;
+let particles = [];
+let comboCount = 0;
+function init() {
+  do { grid = Array.from({length:ROWS}, () =>
+    Array.from({length:COLS}, () => Math.floor(Math.random() * TYPES.length))
+  ); } while (findMatches().length > 0);
+  score = 0; moves = 0; selected = null;
+  document.getElementById('score').textContent = 0;
+  document.getElementById('moves').textContent = 0;
+  draw();
+}
+function draw() {
+  ctx.fillStyle = '#0a0a1a';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++) {
+    const x = PAD + c * CELL, y = PAD + r * CELL;
+    ctx.fillStyle = (r + c) % 2 === 0 ? '#0f0f2a' : '#0c0c22';
+    ctx.fillRect(x, y, CELL, CELL);
+    if (selected && selected[0] === r && selected[1] === c) {
+      ctx.strokeStyle = '#00fff5'; ctx.lineWidth = 3;
+      ctx.shadowColor = '#00fff5'; ctx.shadowBlur = 12;
+      ctx.strokeRect(x + 2, y + 2, CELL - 4, CELL - 4);
+      ctx.shadowBlur = 0;
+    }
+    if (grid[r][c] !== null && grid[r][c] !== undefined) {
+      ctx.font = '36px serif';
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText(TYPES[grid[r][c]], x + CELL / 2, y + CELL / 2 + 2);
+    }
+  }
+  particles.forEach(p => {
+    ctx.globalAlpha = p.life;
+    ctx.font = `${p.size}px serif`;
+    ctx.fillText(p.emoji, p.x, p.y);
+    ctx.globalAlpha = 1;
+  });
+}
+function findMatches() {
+  const matches = new Set();
+  for (let r = 0; r < ROWS; r++) {
+    for (let c = 0; c < COLS - 2; c++) {
+      const t = grid[r][c];
+      if (t !== null && t === grid[r][c+1] && t === grid[r][c+2]) {
+        let end = c + 2;
+        while (end + 1 < COLS && grid[r][end+1] === t) end++;
+        for (let i = c; i <= end; i++) matches.add(`${r},${i}`);
+      }
+    }
+  }
+  for (let c = 0; c < COLS; c++) {
+    for (let r = 0; r < ROWS - 2; r++) {
+      const t = grid[r][c];
+      if (t !== null && t === grid[r+1][c] && t === grid[r+2][c]) {
+        let end = r + 2;
+        while (end + 1 < ROWS && grid[end+1][c] === t) end++;
+        for (let i = r; i <= end; i++) matches.add(`${i},${c}`);
+      }
+    }
+  }
+  return [...matches].map(s => s.split(',').map(Number));
+}
+function spawnParticles(r, c) {
+  const x = PAD + c * CELL + CELL / 2, y = PAD + r * CELL + CELL / 2;
+  const emoji = TYPES[grid[r][c]];
+  for (let i = 0; i < 6; i++) {
+    particles.push({
+      x, y, emoji,
+      vx: (Math.random() - 0.5) * 8,
+      vy: (Math.random() - 0.5) * 8,
+      life: 1, size: 16 + Math.random() * 12
+    });
+  }
+}
+function showCombo(n) {
+  if (n < 2) return;
+  const el = document.getElementById('combo');
+  el.textContent = n >= 4 ? `🔥 ${n}x COMBO!` : `${n}x COMBO`;
+  el.style.opacity = 1;
+  el.style.fontSize = `${Math.min(32 + n * 4, 56)}px`;
+  setTimeout(() => el.style.opacity = 0, 800);
+}
+function clearMatches(matches, cb) {
+  comboCount++;
+  showCombo(comboCount);
+  const pts = matches.length * 10 * comboCount;
+  score += pts;
+  document.getElementById('score').textContent = score;
+  matches.forEach(([r, c]) => spawnParticles(r, c));
+  setTimeout(() => {
+    matches.forEach(([r, c]) => grid[r][c] = null);
+    draw();
+    setTimeout(() => { applyGravity(); draw(); fillEmpty(); draw(); setTimeout(cb, 200); }, 150);
+  }, 200);
+}
+function applyGravity() {
+  for (let c = 0; c < COLS; c++) {
+    let write = ROWS - 1;
+    for (let r = ROWS - 1; r >= 0; r--) {
+      if (grid[r][c] !== null) { grid[write][c] = grid[r][c]; if (write !== r) grid[r][c] = null; write--; }
+    }
+    for (let r = write; r >= 0; r--) grid[r][c] = null;
+  }
+}
+function fillEmpty() {
+  for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++)
+    if (grid[r][c] === null) grid[r][c] = Math.floor(Math.random() * TYPES.length);
+}
+function checkCascade() {
+  const m = findMatches();
+  if (m.length > 0) { clearMatches(m, checkCascade); }
+  else { checking = false; comboCount = 0; draw(); }
+}
+function swap(r1, c1, r2, c2) {
+  [grid[r1][c1], grid[r2][c2]] = [grid[r2][c2], grid[r1][c1]];
+}
+function trySwap(r1, c1, r2, c2) {
+  swap(r1, c1, r2, c2);
+  const m = findMatches();
+  if (m.length > 0) {
+    moves++;
+    document.getElementById('moves').textContent = moves;
+    checking = true;
+    comboCount = 0;
+    draw();
+    clearMatches(m, checkCascade);
+  } else {
+    swap(r1, c1, r2, c2);
+    draw();
+  }
+}
+canvas.addEventListener('click', e => {
+  if (checking) return;
+  const rect = canvas.getBoundingClientRect();
+  const scaleX = canvas.width / rect.width, scaleY = canvas.height / rect.height;
+  const mx = (e.clientX - rect.left) * scaleX, my = (e.clientY - rect.top) * scaleY;
+  const c = Math.floor((mx - PAD) / CELL), r = Math.floor((my - PAD) / CELL);
+  if (r < 0 || r >= ROWS || c < 0 || c >= COLS) return;
+  if (!selected) { selected = [r, c]; draw(); return; }
+  const [sr, sc] = selected;
+  if (sr === r && sc === c) { selected = null; draw(); return; }
+  if (Math.abs(sr - r) + Math.abs(sc - c) === 1) {
+    selected = null;
+    trySwap(sr, sc, r, c);
+  } else {
+    selected = [r, c]; draw();
+  }
+});
+function animLoop() {
+  let dirty = false;
+  particles.forEach(p => { p.x += p.vx; p.y += p.vy; p.life -= 0.025; dirty = true; });
+  particles = particles.filter(p => p.life > 0);
+  if (dirty) draw();
+  requestAnimationFrame(animLoop);
+}
+animLoop();
+init();
+</script>
+</body>
+</html>

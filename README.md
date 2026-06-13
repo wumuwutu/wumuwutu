@@ -1,6 +1,6 @@
 <div align="center">
 
-<!-- ▰▰▰▰▰▰▰▰▰▰ NEON HEADER ▰▰▰▰▰▰▰▰▰▰ -->
+<!-- ▰▰▰▰▰▰▰▰▰▰ ANIMATED NEON HEADER ▰▰▰▰▰▰▰▰▰▰ -->
 
 <img src="assets/header.svg" width="100%" />
 
@@ -22,46 +22,27 @@
 
 <br/>
 
-<!-- ▰▰▰▰▰▰▰▰▰▰ MAZE GAME ▰▰▰▰▰▰▰▰▰🇦🇫 -->
+<!-- ▰▰▰▰▰▰▰▰▰▰ INTERACTIVE GAME ▰▰▰▰▰▰▰▰▰▰ -->
 
-![maze-title](https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=12&color=ffd700&center=true&vCenter=true&width=400&height=30&lines=%3E+ENTER+THE+MAZE)
-
-<br/>
-
-<img src="assets/maze.svg" width="600" />
+![game-title](https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=12&color=ffd700&center=true&vCenter=true&width=400&height=30&lines=%3E+PIXEL+CRUSH)
 
 <br/>
 
-![maze-hint](https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=8&color=ff6b9d&center=true&vCenter=true&width=500&height=25&lines=TRACE+THE+PATH+FROM+IN+TO+OUT...;CAN+YOU+REACH+THE+PORTAL%3F&repeat=true)
+[<img src="https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=10&color=00fff5&center=true&vCenter=true&width=350&height=25&lines=%E2%96%B6+CLICK+TO+PLAY+%E2%96%B6" />](https://github.com/wumuwutu/wumuwutu/blob/main/assets/game.html)
 
 <br/>
 
-<!-- ▰▰▰▰▰▰▰▰▰▰ HIDDEN SOLUTION ▰▰▰▰▰▰▰▰▰🇦🇫 -->
-
-<details>
-<summary><img src="https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=8&color=4a4a6a&center=true&vCenter=true&width=300&height=20&lines=%3E+REVEAL+SOLUTION" /></summary>
+![game-hint](https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=8&color=ff6b9d&center=true&vCenter=true&width=500&height=25&lines=MATCH+3+TO+SCORE...;CAN+YOU+BREAK+THE+HIGH+SCORE%3F&repeat=true)
 
 <br/>
 
-```
-IN → ↓ → → → ↓ → ↓ → ↓ → → → ↓ → ↓
-              ↓           ↓       ↓
-→ → ↓ → → → ↓ → → → ↓ → ↓ → → → ↓
-    ↓           ↓   ↓       ↓
-↓ → ↓ → ↓ → → → ↓ → ↓ → → → ↓ → → → OUT
-```
-
-</details>
-
-<br/>
-
-<!-- ▰▰▰▰▰▰▰▰▰▰ DIVIDER ▰▰▰▰▰▰▰▰▰🇦🇫 -->
+<!-- ▰▰▰▰▰▰▰▰▰▰ DIVIDER ▰▰▰▰▰▰▰▰▰▰ -->
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:ff0055,50:00fff5,100:4a00e0&height=3&section=header&text=&fontSize=0" width="600" />
 
 <br/>
 
-<!-- ▰▰▰▰▰▰▰▰▰▰ FOOTER ▰▰▰▰▰▰▰▰▰🇦🇫 -->
+<!-- ▰▰▰▰▰▰▰▰▰▰ FOOTER ▰▰▰▰▰▰▰▰▰▰ -->
 
 ![footer](https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=8&color=4a4a6a&center=true&vCenter=true&width=400&height=20&lines=%3E+CONNECTION+TERMINATED)
 
