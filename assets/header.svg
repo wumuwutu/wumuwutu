@@ -158,10 +158,6 @@
   <text x="400" y="381" text-anchor="middle" font-family="'Courier New',monospace" font-size="11" fill="#00fff5" filter="url(#text-glow-cyan)" opacity="0.5">DECRYPTING IDENTITY...</text>
   <text x="400" y="399" text-anchor="middle" font-family="'Courier New',monospace" font-size="11" fill="#ff0055" filter="url(#text-glow-cyan)">ACCESS LEVEL: UNKNOWN</text>
 
-  <!-- game teaser (colorful pixel style) -->
-  <rect x="240" y="416" width="320" height="34" rx="2" fill="none" stroke-width="2" filter="url(#glow)">
-    <animate attributeName="stroke" values="#ff0055;#ffd700;#39ff14;#00fff5;#4a00e0;#ff0055" dur="4s" repeatCount="indefinite"/>
-  </rect>
   <text x="400" y="440" text-anchor="middle" font-family="'Courier New',monospace" font-size="13" font-weight="bold" letter-spacing="2" filter="url(#glow)">
     <tspan fill="#ff0055">&gt;</tspan><tspan fill="#ffd700"> </tspan><tspan fill="#ff6b9d">P</tspan><tspan fill="#ffd700">I</tspan><tspan fill="#39ff14">X</tspan><tspan fill="#00fff5">E</tspan><tspan fill="#4a00e0">L</tspan><tspan fill="#ffd700"> </tspan><tspan fill="#ff0055">C</tspan><tspan fill="#ff6b9d">R</tspan><tspan fill="#ffd700">U</tspan><tspan fill="#39ff14">S</tspan><tspan fill="#00fff5">H</tspan><tspan fill="#ffd700"> </tspan><tspan fill="#ff0055">&lt;</tspan>
   </text>
@@ -172,5 +168,4 @@
   <line x1="300" y1="460" x2="500" y2="460" stroke="#ff0055" stroke-width="2" filter="url(#glow)"/>
   <line x1="500" y1="460" x2="700" y2="460" stroke="#00fff5" stroke-width="2" filter="url(#glow)"/>
 
-  <text x="400" y="478" text-anchor="middle" font-family="'Courier New',monospace" font-size="9" fill="#4a4a6a" letter-spacing="2">&gt; CONNECTION TERMINATED</text>
 </svg>
