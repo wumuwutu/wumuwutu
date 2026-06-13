@@ -6,7 +6,7 @@
 
 <br/>
 
-### **[▶ CLICK TO PLAY PIXEL CRUSH ◀](https://github.com/wumuwutu/wumuwutu/blob/main/assets/game.html)**
+### **[▶ CLICK TO PLAY PIXEL CRUSH ◀](https://raw.githubusercontent.com/wumuwutu/wumuwutu/main/assets/game.html)**
 
 <br/>
 
