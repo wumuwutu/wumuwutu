@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" width="800" height="280">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#050510"/>
+      <stop offset="50%" stop-color="#0a0a2e"/>
+      <stop offset="100%" stop-color="#1a0a3e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-strong">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- sky -->
+  <rect width="800" height="280" fill="url(#sky)"/>
+
+  <!-- stars -->
+  <rect x="50" y="20" width="2" height="2" fill="#fff" opacity="0.9"/>
+  <rect x="120" y="45" width="2" height="2" fill="#fff" opacity="0.7"/>
+  <rect x="200" y="15" width="3" height="3" fill="#00fff5" opacity="0.8"/>
+  <rect x="300" y="55" width="2" height="2" fill="#fff" opacity="0.6"/>
+  <rect x="380" y="25" width="2" height="2" fill="#ff6b9d" opacity="0.8"/>
+  <rect x="450" y="40" width="3" height="3" fill="#fff" opacity="0.9"/>
+  <rect x="550" y="18" width="2" height="2" fill="#00fff5" opacity="0.7"/>
+  <rect x="620" y="50" width="2" height="2" fill="#fff" opacity="0.8"/>
+  <rect x="700" y="30" width="3" height="3" fill="#ff6b9d" opacity="0.6"/>
+  <rect x="160" y="70" width="2" height="2" fill="#fff" opacity="0.5"/>
+  <rect x="480" y="65" width="2" height="2" fill="#fff" opacity="0.7"/>
+  <rect x="340" y="35" width="2" height="2" fill="#ffd700" opacity="0.8"/>
+  <rect x="650" y="15" width="2" height="2" fill="#fff" opacity="0.9"/>
+  <rect x="750" y="55" width="2" height="2" fill="#00fff5" opacity="0.6"/>
+  <rect x="80" y="60" width="2" height="2" fill="#ffd700" opacity="0.7"/>
+  <rect x="580" y="40" width="2" height="2" fill="#fff" opacity="0.8"/>
+  <rect x="250" y="25" width="2" height="2" fill="#fff" opacity="0.9"/>
+
+  <!-- moon -->
+  <circle cx="680" cy="50" r="20" fill="#ffd700" opacity="0.9"/>
+  <circle cx="690" cy="45" r="18" fill="#050510"/>
+
+  <!-- far buildings (darker) -->
+  <rect x="0" y="140" width="50" height="140" fill="#0d0d20"/>
+  <rect x="55" y="120" width="40" height="160" fill="#0d0d20"/>
+  <rect x="100" y="150" width="60" height="130" fill="#0d0d20"/>
+  <rect x="200" y="110" width="35" height="170" fill="#0d0d20"/>
+  <rect x="280" y="130" width="50" height="150" fill="#0d0d20"/>
+  <rect x="370" y="100" width="40" height="180" fill="#0d0d20"/>
+  <rect x="450" y="140" width="55" height="140" fill="#0d0d20"/>
+  <rect x="540" y="115" width="35" height="165" fill="#0d0d20"/>
+  <rect x="610" y="135" width="50" height="145" fill="#0d0d20"/>
+  <rect x="700" y="105" width="45" height="175" fill="#0d0d20"/>
+  <rect x="755" y="145" width="45" height="135" fill="#0d0d20"/>
+
+  <!-- near buildings (slightly lighter) -->
+  <rect x="20" y="160" width="70" height="120" fill="#111128"/>
+  <rect x="130" y="130" width="50" height="150" fill="#111128"/>
+  <rect x="190" y="145" width="65" height="135" fill="#111128"/>
+  <rect x="310" y="120" width="45" height="160" fill="#111128"/>
+  <rect x="400" y="150" width="60" height="130" fill="#111128"/>
+  <rect x="490" y="125" width="40" height="155" fill="#111128"/>
+  <rect x="560" y="155" width="55" height="125" fill="#111128"/>
+  <rect x="650" y="130" width="45" height="150" fill="#111128"/>
+
+  <!-- neon windows (cyan) -->
+  <rect x="30" y="170" width="4" height="4" fill="#00fff5" filter="url(#glow)"/>
+  <rect x="40" y="180" width="4" height="4" fill="#00fff5" filter="url(#glow)"/>
+  <rect x="30" y="200" width="4" height="4" fill="#00fff5" opacity="0.6"/>
+  <rect x="50" y="190" width="4" height="4" fill="#00fff5" filter="url(#glow)"/>
+  <rect x="140" y="145" width="4" height="4" fill="#ff6b9d" filter="url(#glow)"/>
+  <rect x="155" y="155" width="4" height="4" fill="#ff6b9d" filter="url(#glow)"/>
+  <rect x="140" y="170" width="4" height="4" fill="#ff6b9d" opacity="0.6"/>
+  <rect x="160" y="165" width="4" height="4" fill="#00fff5" filter="url(#glow)"/>
+  <rect x="205" y="160" width="4" height="4" fill="#ffd700" filter="url(#glow)"/>
+  <rect x="220" y="175" width="4" height="4" fill="#ffd700" filter="url(#glow)"/>
+  <rect x="235" y="165" width="4" height="4" fill="#00fff5" filter="url(#glow)"/>
+  <rect x="320" y="140" width="4" height="4" fill="#ff6b9d" filter="url(#glow)"/>
+  <rect x="335" y="155" width="4" height="4" fill="#00fff5" filter="url(#glow)"/>
+  <rect x="320" y="170" width="4" height="4" fill="#ffd700" filter="url(#glow)"/>
+  <rect x="415" y="165" width="4" height="4" fill="#00fff5" filter="url(#glow)"/>
+  <rect x="430" y="180" width="4" height="4" fill="#ff6b9d" filter="url(#glow)"/>
+  <rect x="445" y="170" width="4" height="4" fill="#00fff5" filter="url(#glow)"/>
+  <rect x="500" y="140" width="4" height="4" fill="#ffd700" filter="url(#glow)"/>
+  <rect x="510" y="155" width="4" height="4" fill="#ff6b9d" filter="url(#glow)"/>
+  <rect x="570" y="170" width="4" height="4" fill="#00fff5" filter="url(#glow)"/>
+  <rect x="585" y="180" width="4" height="4" fill="#00fff5" filter="url(#glow)"/>
+  <rect x="660" y="145" width="4" height="4" fill="#ff6b9d" filter="url(#glow)"/>
+  <rect x="675" y="160" width="4" height="4" fill="#ffd700" filter="url(#glow)"/>
+  <rect x="660" y="175" width="4" height="4" fill="#00fff5" filter="url(#glow)"/>
+  <rect x="710" y="120" width="4" height="4" fill="#00fff5" filter="url(#glow)"/>
+  <rect x="725" y="135" width="4" height="4" fill="#ff6b9d" filter="url(#glow)"/>
+  <rect x="710" y="150" width="4" height="4" fill="#00fff5" opacity="0.6"/>
+  <rect x="765" y="160" width="4" height="4" fill="#ffd700" filter="url(#glow)"/>
+  <rect x="780" y="175" width="4" height="4" fill="#00fff5" filter="url(#glow)"/>
+
+  <!-- antenna lights -->
+  <rect x="212" y="108" width="3" height="3" fill="#ff0055" filter="url(#glow-strong)"/>
+  <rect x="382" y="98" width="3" height="3" fill="#ff0055" filter="url(#glow-strong)"/>
+  <rect x="712" y="103" width="3" height="3" fill="#ff0055" filter="url(#glow-strong)"/>
+
+  <!-- character on rooftop (center building) -->
+  <!-- hood -->
+  <rect x="384" y="90" width="4" height="4" fill="#1a1a3e"/>
+  <rect x="388" y="86" width="8" height="4" fill="#1a1a3e"/>
+  <rect x="396" y="90" width="4" height="4" fill="#1a1a3e"/>
+  <rect x="392" y="86" width="4" height="4" fill="#2a2a5e"/>
+  <!-- face -->
+  <rect x="388" y="90" width="8" height="8" fill="#c0c0d0"/>
+  <rect x="388" y="94" width="4" height="4" fill="#c0c0d0"/>
+  <!-- glowing eyes -->
+  <rect x="388" y="92" width="3" height="2" fill="#00fff5" filter="url(#glow)"/>
+  <rect x="393" y="92" width="3" height="2" fill="#00fff5" filter="url(#glow)"/>
+  <!-- body -->
+  <rect x="386" y="98" width="12" height="12" fill="#1a1a3e"/>
+  <rect x="384" y="100" width="4" height="8" fill="#1a1a3e"/>
+  <rect x="396" y="100" width="4" height="8" fill="#1a1a3e"/>
+  <!-- scarf -->
+  <rect x="386" y="98" width="12" height="3" fill="#ff0055"/>
+  <rect x="396" y="101" width="4" height="6" fill="#ff0055"/>
+  <!-- legs -->
+  <rect x="388" y="110" width="4" height="6" fill="#111128"/>
+  <rect x="394" y="110" width="4" height="6" fill="#111128"/>
+
+  <!-- ground line -->
+  <rect x="0" y="260" width="800" height="20" fill="#0a0a1a"/>
+  <rect x="0" y="260" width="800" height="2" fill="#4a00e0" opacity="0.5"/>
+
+  <!-- neon reflection on ground -->
+  <rect x="30" y="262" width="6" height="2" fill="#00fff5" opacity="0.3"/>
+  <rect x="140" y="262" width="6" height="2" fill="#ff6b9d" opacity="0.3"/>
+  <rect x="320" y="262" width="6" height="2" fill="#ffd700" opacity="0.3"/>
+  <rect x="500" y="262" width="6" height="2" fill="#00fff5" opacity="0.3"/>
+  <rect x="660" y="262" width="6" height="2" fill="#ff6b9d" opacity="0.3"/>
+  <rect x="710" y="262" width="6" height="2" fill="#00fff5" opacity="0.3"/>
+
+  <!-- username in pixel style -->
+  <text x="400" y="252" text-anchor="middle" font-family="'Courier New', monospace" font-size="28" font-weight="bold" fill="#00fff5" filter="url(#glow-strong)" letter-spacing="8">WUMUWUTU</text>
+</svg>
