@@ -1,15 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 40" width="400" height="40">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 24" width="350" height="24">
   <defs>
     <filter id="g">
-      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feGaussianBlur stdDeviation="2" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-  <rect width="400" height="40" fill="#050510"/>
-  <rect x="4" y="4" width="392" height="32" rx="4" fill="none" stroke-width="2" filter="url(#g)">
-    <animate attributeName="stroke" values="#ff0055;#ffd700;#39ff14;#00fff5;#4a00e0;#ff0055" dur="4s" repeatCount="indefinite"/>
-  </rect>
-  <text x="200" y="27" text-anchor="middle" font-family="'Courier New',monospace" font-size="14" font-weight="bold" letter-spacing="3" filter="url(#g)">
+  <text x="175" y="19" text-anchor="middle" font-family="'Courier New',monospace" font-size="16" font-weight="bold" letter-spacing="3" filter="url(#g)">
     <tspan fill="#ff0055">&gt;</tspan>
     <tspan fill="#ffd700">C</tspan><tspan fill="#39ff14">L</tspan><tspan fill="#00fff5">I</tspan><tspan fill="#4a00e0">C</tspan><tspan fill="#ff6b9d">K</tspan>
     <tspan fill="#ffd700"> </tspan>
