@@ -68,6 +68,7 @@ let grid = [], selected = null, score = 0, moves = 0, best = 0;
 let swapping = null, falling = false, checking = false;
 let particles = [];
 let comboCount = 0;
+let invalidCells = null;
 function init() {
   do { grid = Array.from({length:ROWS}, () =>
     Array.from({length:COLS}, () => Math.floor(Math.random() * TYPES.length))
@@ -87,6 +88,12 @@ function draw() {
     if (selected && selected[0] === r && selected[1] === c) {
       ctx.strokeStyle = '#00fff5'; ctx.lineWidth = 3;
       ctx.shadowColor = '#00fff5'; ctx.shadowBlur = 12;
+      ctx.strokeRect(x + 2, y + 2, CELL - 4, CELL - 4);
+      ctx.shadowBlur = 0;
+    }
+    if (invalidCells && invalidCells.some(([ir,ic]) => ir === r && ic === c)) {
+      ctx.strokeStyle = '#ff0055'; ctx.lineWidth = 3;
+      ctx.shadowColor = '#ff0055'; ctx.shadowBlur = 12;
       ctx.strokeRect(x + 2, y + 2, CELL - 4, CELL - 4);
       ctx.shadowBlur = 0;
     }
@@ -192,8 +199,13 @@ function trySwap(r1, c1, r2, c2) {
     draw();
     clearMatches(m, checkCascade);
   } else {
-    swap(r1, c1, r2, c2);
+    invalidCells = [[r1,c1],[r2,c2]];
     draw();
+    setTimeout(() => {
+      swap(r1, c1, r2, c2);
+      invalidCells = null;
+      draw();
+    }, 400);
   }
 }
 canvas.addEventListener('click', e => {
