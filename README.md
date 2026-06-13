@@ -1,12 +1,18 @@
 <div align="center">
 
-<!-- ▰▰▰▰▰▰▰▰▰▰ ALL-IN-ONE SVG HEADER ▰▰▰▰▰▰▰▰▰▰ -->
-
 <img src="assets/header.svg" width="100%" />
 
 <br/>
 
-### **[▶ CLICK TO PLAY PIXEL CRUSH ◀](https://htmlpreview.github.io/?https://github.com/wumuwutu/wumuwutu/blob/main/assets/game.html)**
+<h3>
+<a href="https://htmlpreview.github.io/?https://github.com/wumuwutu/wumuwutu/blob/main/assets/game.html">
+<code style="color:#ff0055;font-size:18px;">▶</code>
+<code style="color:#ffd700;font-size:18px;">CLICK</code>
+<code style="color:#39ff14;font-size:18px;">TO</code>
+<code style="color:#00fff5;font-size:18px;">PLAY</code>
+<code style="color:#ff0055;font-size:18px;">◀</code>
+</a>
+</h3>
 
 <br/>
 

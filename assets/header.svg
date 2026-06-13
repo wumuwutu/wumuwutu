@@ -138,8 +138,10 @@
   <rect x="500" y="262" width="6" height="2" fill="#00fff5" opacity="0.3"><animate attributeName="opacity" values="0.3;0.08;0.3" dur="2.5s" repeatCount="indefinite"/></rect>
   <rect x="660" y="262" width="6" height="2" fill="#ff6b9d" opacity="0.3"><animate attributeName="opacity" values="0.3;0.1;0.3" dur="4.5s" repeatCount="indefinite"/></rect>
 
-  <!-- username on cityscape -->
-  <text x="400" y="252" text-anchor="middle" font-family="'Courier New',monospace" font-size="28" font-weight="bold" fill="#00fff5" filter="url(#glow-intense)" letter-spacing="8">WUMUWUTU</text>
+  <!-- username on cityscape (rainbow pixel style) -->
+  <text x="400" y="250" text-anchor="middle" font-family="'Courier New',monospace" font-size="24" font-weight="bold" filter="url(#glow-intense)" letter-spacing="6">
+    <tspan fill="#ff0055">W</tspan><tspan fill="#ff6b00">U</tspan><tspan fill="#ffd700">M</tspan><tspan fill="#39ff14">U</tspan><tspan fill="#00fff5">W</tspan><tspan fill="#4a00e0">U</tspan><tspan fill="#ff6b9d">T</tspan><tspan fill="#ff0055">U</tspan>
+  </text>
 
   <!-- ═══ TEXT SECTION BELOW CITYSCAPE ═══ -->
 
@@ -156,11 +158,13 @@
   <text x="400" y="381" text-anchor="middle" font-family="'Courier New',monospace" font-size="11" fill="#00fff5" filter="url(#text-glow-cyan)" opacity="0.5">DECRYPTING IDENTITY...</text>
   <text x="400" y="399" text-anchor="middle" font-family="'Courier New',monospace" font-size="11" fill="#ff0055" filter="url(#text-glow-cyan)">ACCESS LEVEL: UNKNOWN</text>
 
-  <!-- game teaser -->
-  <rect x="250" y="418" width="300" height="30" rx="4" fill="none" stroke="#ffd700" stroke-width="2" filter="url(#glow)">
-    <animate attributeName="stroke-opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+  <!-- game teaser (colorful pixel style) -->
+  <rect x="240" y="416" width="320" height="34" rx="2" fill="none" stroke-width="2" filter="url(#glow)">
+    <animate attributeName="stroke" values="#ff0055;#ffd700;#39ff14;#00fff5;#4a00e0;#ff0055" dur="4s" repeatCount="indefinite"/>
   </rect>
-  <text x="400" y="439" text-anchor="middle" font-family="'Courier New',monospace" font-size="12" font-weight="bold" fill="#ffd700" filter="url(#glow)" letter-spacing="1">&gt; PIXEL CRUSH &lt;</text>
+  <text x="400" y="440" text-anchor="middle" font-family="'Courier New',monospace" font-size="13" font-weight="bold" letter-spacing="2" filter="url(#glow)">
+    <tspan fill="#ff0055">&gt;</tspan><tspan fill="#ffd700"> </tspan><tspan fill="#ff6b9d">P</tspan><tspan fill="#ffd700">I</tspan><tspan fill="#39ff14">X</tspan><tspan fill="#00fff5">E</tspan><tspan fill="#4a00e0">L</tspan><tspan fill="#ffd700"> </tspan><tspan fill="#ff0055">C</tspan><tspan fill="#ff6b9d">R</tspan><tspan fill="#ffd700">U</tspan><tspan fill="#39ff14">S</tspan><tspan fill="#00fff5">H</tspan><tspan fill="#ffd700"> </tspan><tspan fill="#ff0055">&lt;</tspan>
+  </text>
 
   <!-- divider line -->
   <line x1="100" y1="460" x2="700" y2="460" stroke="url(#sky)" stroke-width="1" opacity="0.3"/>
